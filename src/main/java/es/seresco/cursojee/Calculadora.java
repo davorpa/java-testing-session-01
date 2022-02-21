@@ -10,4 +10,18 @@ public class Calculadora {
 		return num1 * num2;
 	}
 
+	public int dividir(int dividendo, int divisor) {
+		if (divisor == 0) {
+			throw new DivisionByZeroArithmeticException();
+		}
+		return dividendo / divisor;
+	}
+
+	public double dividir(double dividendo, double divisor) {
+		if (divisor == 0) {
+			throw new DivisionByZeroArithmeticException();
+		}
+		return dividendo / divisor;
+	}
+
 }
