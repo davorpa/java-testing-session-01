@@ -3,7 +3,7 @@ package es.seresco.cursojee;
 import org.junit.Assert;
 import org.junit.Test;
 
-public class CalculadoraTest {
+public class CalculadoraSumasTest {
 	
 	/**
 	 * Test para sumar dos números
