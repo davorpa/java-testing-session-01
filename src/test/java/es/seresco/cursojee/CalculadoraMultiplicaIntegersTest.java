@@ -6,7 +6,7 @@ import org.junit.Before;
 import org.junit.Ignore;
 import org.junit.Test;
 
-public class CalculadoraMultiplicaTest {
+public class CalculadoraMultiplicaIntegersTest {
 
 	private Calculadora calculadora;
 
@@ -32,159 +32,145 @@ public class CalculadoraMultiplicaTest {
 
 	@Test
 	public void testMultiplicaPositivoPorCero() {
-		//Given
+		// Given
 		int num1 = 5;
 		int num2 = 0;
-		// expect
 		int expected = 0;
 		// do
 		int result = calculadora.multiplicar(num1, num2);
-		// assert
+		// assert expected
 		Assert.assertEquals(expected, result);
 	}
 
 	@Test
 	public void testMultiplicaPositivoPorCeroComutativa() {
-		//Given
+		// Given
 		int num1 = 5;
 		int num2 = 0;
-		// expect
 		int expected = 0;
 		// do
 		int result = calculadora.multiplicar(num2, num1);
-		// assert
+		// assert expected
 		Assert.assertEquals(expected, result);
 	}
 
 	@Test
 	public void testMultiplicaLimitePositivoPorCero() {
-		//Given
+		// Given
 		int num1 = Integer.MAX_VALUE;
 		int num2 = 0;
-		// expect
 		int expected = 0;
 		// do
 		int result = calculadora.multiplicar(num1, num2);
-		// assert
+		// assert expected
 		Assert.assertEquals(expected, result);
 	}
 
 	@Test
 	public void testMultiplicaLimiteNegativoPorCero() {
-		//Given
+		// Given
 		int num1 = Integer.MIN_VALUE;
 		int num2 = 0;
-		// expect
 		int expected = 0;
 		// do
 		int result = calculadora.multiplicar(num1, num2);
-		// assert
+		// assert expected
 		Assert.assertEquals(expected, result);
 	}
-	
-
 
 	@Test
 	public void testDoblaLimitePositivo() {
-		//Given
+		// Given
 		int num1 = Integer.MAX_VALUE;
 		int num2 = 2;
-		// expect
 		int expected = -2;
 		// do
 		int result = calculadora.multiplicar(num1, num2);
-		// assert
+		// assert expected
 		Assert.assertEquals(expected, result);
 	}
 
 	@Test
 	public void testDoblaLimiteNegativo() {
-		//Given
+		// Given
 		int num1 = Integer.MAX_VALUE;
 		int num2 = -2;
-		// expect
 		int expected = 2;
 		// do
 		int result = calculadora.multiplicar(num1, num2);
-		// assert
+		// assert expected
 		Assert.assertEquals(expected, result);
 	}
 
 	@Test
 	public void testMultiplicaDosNumerosPositivos() {
-		//Given
+		// Given
 		int num1 = 5;
 		int num2 = 2;
-		// expect
 		int expected = 10;
 		// do
 		int result = calculadora.multiplicar(num1, num2);
-		// assert
+		// assert expected
 		Assert.assertEquals(expected, result);
 	}
 
 	@Test
 	public void testMultiplicaDosNumerosPositivosComutativa() {
-		//Given
+		// Given
 		int num1 = 5;
 		int num2 = 2;
-		// expect
 		int expected = 10;
 		// do
 		int result = calculadora.multiplicar(num2, num1);
-		// assert
+		// assert expected
 		Assert.assertEquals(expected, result);
 	}
 
 	@Test
 	public void testMultiplicaDosNumerosNegativos() {
-		//Given
+		// Given
 		int num1 = -5;
 		int num2 = -2;
-		// expect
 		int expected = 10;
 		// do
 		int result = calculadora.multiplicar(num1, num2);
-		// assert
+		// assert expected
 		Assert.assertEquals(expected, result);
 	}
 
 	@Test
 	public void testMultiplicaDosNumerosNegativosComutativa() {
-		//Given
+		// Given
 		int num1 = -5;
 		int num2 = -2;
-		// expect
 		int expected = 10;
 		// do
 		int result = calculadora.multiplicar(num2, num1);
-		// assert
+		// assert expected
 		Assert.assertEquals(expected, result);
 	}
 
 	@Test
 	public void testMultiplicaDosNumerosDistintoSigno() {
-		//Given
+		// Given
 		int num1 = -5;
 		int num2 = 3;
-		// expect
 		int expected = -15;
 		// do
 		int result = calculadora.multiplicar(num1, num2);
-		// assert
+		// assert expected
 		Assert.assertEquals(expected, result);
 	}
 
 	@Test
 	public void testMultiplicaDosNumerosDistintoSignoComutativa() {
-		//Given
+		// Given
 		int num1 = -5;
 		int num2 = 3;
-		// expect
 		int expected = -15;
 		// do
 		int result = calculadora.multiplicar(num2, num1);
-		// assert
+		// assert expected
 		Assert.assertEquals(expected, result);
 	}
 
