@@ -1,28 +1,98 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
+
 	<groupId>org.seresco.cursojee</groupId>
 	<artifactId>java-testing-session-01</artifactId>
 	<version>0.0.1</version>
+	<packaging>pom</packaging>
 	<name>java-testing-session-01</name>
 
 
-	<dependencies>
-		<!-- https://mvnrepository.com/artifact/junit/junit -->
-		<dependency>
-			<groupId>junit</groupId>
-			<artifactId>junit</artifactId>
-			<version>${junit.version}</version>
-			<scope>test</scope>
-		</dependency>
+	<dependencyManagement>
+		<dependencies>
 
-	</dependencies>
+			<!-- https://mvnrepository.com/artifact/junit/junit -->
+			<dependency>
+				<groupId>junit</groupId>
+				<artifactId>junit</artifactId>
+				<version>${junit.version}</version>
+				<scope>test</scope>
+			</dependency>
+
+			<!-- https://mvnrepository.com/artifact/org.hamcrest/hamcrest-core -->
+			<dependency>
+				<groupId>org.hamcrest</groupId>
+				<artifactId>hamcrest-core</artifactId>
+				<version>${hamcrest.version}</version>
+				<scope>test</scope>
+			</dependency>
+
+			<!-- https://mvnrepository.com/artifact/org.hamcrest/hamcrest-library -->
+			<dependency>
+				<groupId>org.hamcrest</groupId>
+				<artifactId>hamcrest-library</artifactId>
+				<version>${hamcrest.version}</version>
+				<scope>test</scope>
+			</dependency>
+
+			<!-- https://mvnrepository.com/artifact/org.projectlombok/lombok -->
+			<dependency>
+				<groupId>org.projectlombok</groupId>
+				<artifactId>lombok</artifactId>
+				<version>${lombok.version}</version>
+				<!--
+				ejecutar primero el instalador del agente para el IDE que se tenga
+					java -jar ${mvnrepo}/org.projectlombok/lombok/lombok-${lombok.version}.jar
+				-->
+				<scope>provided</scope>
+			</dependency>
+
+		</dependencies>
+	</dependencyManagement>
+
+
+	<build>
+		<pluginManagement>
+
+			<plugins>
+				<plugin>
+					<groupId>org.apache.maven.plugins</groupId>
+					<artifactId>maven-compiler-plugin</artifactId>
+					<version>${maven-compiler-plugin.version}</version>
+					<configuration>
+						<source>${maven.compiler.source}</source>
+						<target>${maven.compiler.target}</target>
+						<encoding>UTF-8</encoding>
+						<annotationProcessorPaths>
+							<path>
+								<groupId>org.projectlombok</groupId>
+								<artifactId>lombok</artifactId>
+								<version>${lombok.version}</version>
+							</path>
+						</annotationProcessorPaths>
+					</configuration>
+				</plugin>
+			</plugins>
+
+		</pluginManagement>
+	</build>
 
 
 	<properties>
 		<maven.compiler.source>11</maven.compiler.source>
 		<maven.compiler.target>11</maven.compiler.target>
 
-		<junit.version>4.13.1</junit.version>
+		<maven-compiler-plugin.version>3.8.1</maven-compiler-plugin.version>
+
+		<lombok.version>1.18.22</lombok.version>
+		<junit.version>4.13.2</junit.version>
+		<hamcrest.version>1.3</hamcrest.version>
 	</properties>
+
+
+	<modules>
+		<module>java-testing-calculadora</module>
+		<module>java-testing-collections</module>
+	</modules>
 
 </project>
